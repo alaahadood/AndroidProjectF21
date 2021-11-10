@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/game">
+
+    <fragment
+        android:id="@+id/game"
+        android:name="my.dtu.androidprojectf21.ui.Game"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_game_to_win"
+            app:destination="@id/win" />
+        <action
+            android:id="@+id/action_game_to_loss"
+            app:destination="@id/loss" />
+    </fragment>
+    <fragment
+        android:id="@+id/loss"
+        android:name="my.dtu.androidprojectf21.ui.Loss"
+        android:label="fragment_loss"
+        tools:layout="@layout/fragment_loss" >
+        <action
+            android:id="@+id/action_loss_to_game"
+            app:destination="@id/game" />
+    </fragment>
+    <fragment
+        android:id="@+id/win"
+        android:name="my.dtu.androidprojectf21.ui.Win"
+        android:label="fragment_win"
+        tools:layout="@layout/fragment_win" >
+        <action
+            android:id="@+id/action_win_to_game"
+            app:destination="@id/game" />
+    </fragment>
+</navigation>
